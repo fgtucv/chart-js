@@ -592,7 +592,7 @@ var _auto = require("chart.js/auto");
 var _autoDefault = parcelHelpers.interopDefault(_auto);
 const graphic = document.getElementById("myChart").getContext("2d");
 const chartData = new (0, _autoDefault.default)(graphic, {
-    type: "line",
+    type: "polarArea",
     data: {
         labels: [
             "1",
@@ -668,9 +668,16 @@ const chartData = new (0, _autoDefault.default)(graphic, {
         ]
     },
     options: {
+        responsive: true,
         scales: {
-            y: {
-                beginAtZero: true
+            r: {
+                pointLabels: {
+                    display: true,
+                    centerPointLabels: true,
+                    font: {
+                        size: 18
+                    }
+                }
             }
         }
     }
